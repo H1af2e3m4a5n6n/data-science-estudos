@@ -1,0 +1,330 @@
+# 🛒 Análise de Vendas de uma Rede Varejista utilizando SQL Server
+
+## 📖 Sobre o projeto
+
+Este projeto foi desenvolvido com o objetivo de simular um ambiente corporativo de análise de dados utilizando **SQL Server**.
+
+O banco de dados representa uma empresa fictícia do setor varejista, denominada **TechStore Brasil**, especializada na comercialização de produtos de tecnologia.
+
+Todo o projeto foi construído desde a modelagem relacional até a criação das tabelas, inserção dos dados e, posteriormente, consultas analíticas para geração de indicadores de negócio.
+
+A proposta é demonstrar conhecimentos em modelagem de banco de dados, SQL, relacionamentos entre tabelas, manipulação de dados e construção de consultas utilizadas no dia a dia de Analistas de Dados e Business Intelligence.
+
+---
+
+# Objetivos
+
+O projeto busca responder perguntas comuns dentro de um ambiente corporativo, como:
+
+- Quem são os clientes que mais compram?
+- Quais categorias possuem maior faturamento?
+- Quais produtos apresentam melhor desempenho?
+- Qual vendedor possui maior volume de vendas?
+- Qual o ticket médio dos pedidos?
+- Como está distribuído o faturamento ao longo do tempo?
+- Quais produtos nunca foram vendidos?
+- Quais clientes estão inativos?
+
+Além disso, o projeto demonstra boas práticas na organização de scripts SQL e documentação técnica.
+
+---
+
+# Contexto de Negócio
+
+A **TechStore Brasil** atua no comércio de equipamentos eletrônicos, notebooks, smartphones, periféricos e componentes de informática.
+
+A empresa possui:
+
+- Clientes cadastrados
+- Vendedores
+- Produtos organizados por categorias
+- Histórico de pedidos
+- Itens vendidos em cada pedido
+
+Com essas informações é possível construir indicadores estratégicos para apoiar a tomada de decisão da empresa.
+
+---
+
+# Estrutura do Banco de Dados
+
+O banco foi modelado utilizando seis tabelas relacionais.
+
+```
+
+Clientes
+
+↓
+
+Pedidos
+
+↓
+
+ItensPedido
+
+↓
+
+Produtos
+
+↓
+
+Categorias
+
+Pedidos
+
+↓
+
+Vendedores
+
+```
+
+## Tabelas
+
+### Clientes
+
+Armazena as informações cadastrais dos clientes.
+
+Campos:
+
+- ClienteID
+- Nome
+- Cidade
+- Estado
+- DataCadastro
+
+---
+
+### Categorias
+
+Agrupa os produtos por categoria.
+
+Exemplos:
+
+- Notebooks
+- Smartphones
+- Monitores
+- Periféricos
+- Componentes
+- Acessórios
+
+---
+
+### Produtos
+
+Contém os produtos comercializados pela empresa.
+
+Campos principais:
+
+- ProdutoID
+- NomeProduto
+- CategoriaID
+- Preço
+- Estoque
+
+---
+
+### Vendedores
+
+Cadastro dos vendedores responsáveis pelos pedidos.
+
+Campos:
+
+- VendedorID
+- Nome
+- MetaMensal
+
+---
+
+### Pedidos
+
+Representa cada venda realizada.
+
+Campos:
+
+- PedidoID
+- ClienteID
+- VendedorID
+- DataPedido
+
+---
+
+### ItensPedido
+
+Tabela responsável pelo relacionamento entre pedidos e produtos.
+
+Cada pedido pode possuir vários produtos.
+
+Campos:
+
+- ItemID
+- PedidoID
+- ProdutoID
+- Quantidade
+- ValorUnitario
+
+---
+
+# Relacionamentos
+
+O projeto utiliza relacionamentos através de **Primary Keys** e **Foreign Keys**, garantindo a integridade referencial entre as tabelas.
+
+Relacionamentos implementados:
+
+- Clientes → Pedidos
+- Vendedores → Pedidos
+- Pedidos → ItensPedido
+- Produtos → ItensPedido
+- Categorias → Produtos
+
+---
+
+# Conceitos SQL Aplicados
+
+Durante o desenvolvimento serão utilizados diversos recursos da linguagem SQL.
+
+## Definição de Dados (DDL)
+
+- CREATE TABLE
+- DROP TABLE
+- PRIMARY KEY
+- FOREIGN KEY
+- IDENTITY
+
+## Manipulação de Dados (DML)
+
+- INSERT
+- UPDATE
+- DELETE
+
+## Consultas
+
+- SELECT
+- WHERE
+- ORDER BY
+- DISTINCT
+- TOP
+- LIKE
+- BETWEEN
+- IN
+
+## Funções de Agregação
+
+- COUNT()
+- SUM()
+- AVG()
+- MAX()
+- MIN()
+
+## Agrupamentos
+
+- GROUP BY
+- HAVING
+
+## Relacionamentos
+
+- INNER JOIN
+- LEFT JOIN
+- RIGHT JOIN
+
+## Consultas Avançadas
+
+- CASE
+- COALESCE
+- Subqueries
+- CTE (Common Table Expressions)
+- Views
+- Window Functions
+
+---
+
+# Consultas Analíticas
+
+Ao longo do projeto serão desenvolvidas consultas para responder perguntas de negócio como:
+
+- Total de vendas por categoria
+- Faturamento por mês
+- Ranking dos clientes
+- Ranking dos vendedores
+- Produtos mais vendidos
+- Produtos nunca vendidos
+- Ticket médio
+- Receita por cliente
+- Clientes com maior volume de compras
+- Produtos acima do preço médio
+- Participação percentual das categorias
+- Receita acumulada utilizando Window Functions
+
+---
+
+# Organização do Projeto
+
+```
+
+SQL-Analise-Vendas
+
+│
+
+├── README.md
+
+├── scripts
+
+│ ├── 01_Criacao_Banco.sql
+
+│ ├── 02_Insercao_Dados.sql
+
+│ ├── 03_Consultas_Basicas.sql
+
+│ ├── 04_Consultas_Intermediarias.sql
+
+│ ├── 05_Consultas_Avancadas.sql
+
+│ ├── 06_Views.sql
+
+│ └── 07_Window_Functions.sql
+
+│
+
+├── imagens
+
+│ ├── modelo_relacional.png
+
+│ ├── consulta_clientes.png
+
+│ ├── ranking_produtos.png
+
+│ └── faturamento_categoria.png
+
+│
+
+└── LICENSE
+
+```
+
+---
+
+# ▶ Como Executar
+
+1. Abra o OneCompiler SQL Server.
+
+2. Execute o script:
+
+```
+
+01_Criacao_Banco.sql
+
+```
+
+3. Execute:
+
+```
+
+02_Insercao_Dados.sql
+
+```
+
+4. Execute os demais scripts na sequência.
+
+---
+
+## Licença
+
+Este projeto foi desenvolvido para fins acadêmicos e para composição de portfólio profissional.
