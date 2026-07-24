@@ -1,0 +1,52 @@
+# 📊 Análise Estatística utilizando Python
+
+## Sobre
+
+Projeto desenvolvido para aplicar conceitos estatísticos utilizando Python.
+
+São abordados conceitos fundamentais utilizados em Ciência de Dados para análise exploratória dos dados.
+
+---
+
+## Bibliotecas
+
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- SciPy
+
+---
+
+## Conteúdos
+
+- Média
+- Moda
+- Mediana
+- Variância
+- Desvio padrão
+- Distribuições
+- Correlação
+- Visualização gráfica
+
+---
+
+## Objetivo
+
+Aplicar conceitos estatísticos na prática utilizando Python para extração de insights dos dados.
+
+---
+
+## Como executar
+
+```bash
+pip install pandas numpy matplotlib seaborn scipy
+```
+
+Execute o notebook.
+
+---
+
+## Autor
+
+Karina Hafemann
