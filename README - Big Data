@@ -1,0 +1,52 @@
+# ☁️ Projeto de Big Data com PySpark
+
+## Sobre
+
+Este projeto apresenta aplicações de Big Data utilizando PySpark para processamento de grandes volumes de dados.
+
+O notebook demonstra operações distribuídas para análise de dados utilizando o ecossistema Apache Spark.
+
+---
+
+## Tecnologias
+
+- Python
+- PySpark
+- Pandas
+- Spark SQL
+
+---
+
+## Conteúdos abordados
+
+- Criação de DataFrames
+- Transformações
+- Filtragem
+- Agrupamentos
+- Ordenações
+- Agregações
+- Spark SQL
+
+---
+
+## Objetivo
+
+Demonstrar o funcionamento do processamento distribuído utilizando Apache Spark e as principais operações utilizadas em Engenharia e Ciência de Dados.
+
+---
+
+## Como executar
+
+Instale:
+
+```bash
+pip install pyspark
+```
+
+Execute o notebook.
+
+---
+
+## Autor
+
+Karina Hafemann
